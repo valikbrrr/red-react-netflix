@@ -2,9 +2,13 @@ import MovieCard from "./MovieCard";
 
 const App = () => {
   return (
-    <div className="bg-black min-h-screen p-8">
-      <h1 className="text-white text-3xl font-bold mb-4">Netflix App</h1>
-      <MovieCard image='/narcos.jpg' raiting={6} />
+    <div className="min-h-screen w-full bg-black text-white px-6 py-5">
+      <header className="mb-10 flex items-center">
+        <img src="/netflix.png" alt="Netflix" className="h-8 w-auto" />
+      </header>
+      <main className="flex gap-6">
+        <MovieCard image={"/narcos.jpg"} raiting={8.6} />
+      </main>
     </div>
   );
 };
