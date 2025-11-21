@@ -40,9 +40,10 @@ const App = () => {
         {movies.length ? (
           movies.map((movie) => (
             <MovieCard
+              key={movie.name}
               image={movie.image}
               rating={movie.rating}
-              key={movie.name}
+              trailerYoutubeId={movie.trailerYoutubeId}
             />
           ))
         ) : (
