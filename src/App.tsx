@@ -30,9 +30,9 @@ const App = () => {
           />
           <button
             onClick={toggleTheme}
-            className="text-sm px-3 py-1 rounded border border-gray-300 dark:border-white/10 hover:bg-black hover:text-white dark:hover:text-black dark:hover:bg-white/90 transition w-20 mx-2"
+            className="text-sm px-3 py-1 rounded border border-gray-300 hover:bg-gray-400 transition w-20 mx-2"
           >
-            {theme === "dark" ? "Light" : "dark"}
+            {theme === "dark" ? "☀️ Light" : " 🌙 Dark"}
           </button>
         </div>
       </header>
