@@ -1,4 +1,4 @@
-import { type PropsWithChildren } from "react";
+import { useEffect, type PropsWithChildren } from "react";
 import { createPortal } from "react-dom";
 
 interface Props extends PropsWithChildren {
@@ -6,15 +6,15 @@ interface Props extends PropsWithChildren {
 }
 
 export function Modal({ children, onClose }: Props) {
-  // useEffect(() => {
-  // 	const handleEsc = (e: KeyboardEvent) => {
-  // 		if (e.key === 'Escape') onClose()
-  // 	}
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
 
-  // 	window.addEventListener('keydown', handleEsc)
+    window.addEventListener("keydown", handleEsc);
 
-  // 	return () => window.removeEventListener('keydown', handleEsc)
-  // }, [onClose])
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [onClose]);
 
   return createPortal(
     <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center">

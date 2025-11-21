@@ -5,15 +5,19 @@ import { FavoriteButton } from "./FavoriteButton";
 interface MovieCardType {
   image: string;
   rating: number;
-  trailerYoutubeId: string
+  trailerYoutubeId: string;
 }
 
-const MovieCard: React.FC<MovieCardType> = ({ image, rating, trailerYoutubeId }) => {
+const MovieCard: React.FC<MovieCardType> = ({
+  image,
+  rating,
+  trailerYoutubeId,
+}) => {
   const [isOpenTrailer, setIsOpenTrailer] = useState(false);
 
-  	const openTrailer = useCallback(() => {
-		setIsOpenTrailer(true)
-	}, [])
+  const openTrailer = useCallback(() => {
+    setIsOpenTrailer(true);
+  }, []);
 
   return (
     <div className="relative w-[200px] rounded-2xl overflow-hidden bg-neutral-900 shadow-lg">
@@ -42,12 +46,9 @@ const MovieCard: React.FC<MovieCardType> = ({ image, rating, trailerYoutubeId })
       />
       <div className="absolute top-4 right-2 z-10">
         <FavoriteButton />
-        <button
-					className="btn"
-					onClick={openTrailer}
-				>
-					🎥
-				</button>
+        <button className="btn" onClick={openTrailer}>
+          🎥
+        </button>
       </div>
       <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-2 text-sm text-white font-semibold">
         IMDb: {rating}
