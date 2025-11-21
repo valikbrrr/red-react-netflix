@@ -2,18 +2,14 @@ import { memo, useCallback, useState } from "react";
 import { Modal } from "../../components/ui/Modal";
 import FavoriteButton from "./FavoriteButton";
 import { Link } from "react-router-dom";
+import type { IMovie } from "./movies.interface";
 
-interface MovieCardType {
-  image: string;
-  rating: number;
-  trailerYoutubeId: string;
+interface Props {
+  movie: IMovie
 }
 
-const MovieCard: React.FC<MovieCardType> = ({
-  image,
-  rating,
-  trailerYoutubeId,
-}) => {
+function MovieCard({ movie
+}: Props) {
   const [isOpenTrailer, setIsOpenTrailer] = useState(false);
 
   const openTrailer = useCallback(() => {
@@ -31,7 +27,7 @@ const MovieCard: React.FC<MovieCardType> = ({
           <iframe
             width="373"
             height="210"
-            src={`https://www.youtube.com/embed/${trailerYoutubeId}?amp;controls=0`}
+            src={`https://www.youtube.com/embed/${movie.trailerYoutubeId}?amp;controls=0`}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
@@ -40,7 +36,7 @@ const MovieCard: React.FC<MovieCardType> = ({
         </Modal>
       )}
       <img
-        src={image}
+        src={movie.image}
         alt="img"
         width={200}
         className="w-full h-auto object-cover"
@@ -50,12 +46,12 @@ const MovieCard: React.FC<MovieCardType> = ({
         <button className="btn" onClick={openTrailer}>
           🎥
         </button>
-        <Link to={`/movie/${trailerYoutubeId}`} className="btn">
+        <Link to={`/movie/${movie.trailerYoutubeId}`} className="btn">
           🔗
         </Link>
       </div>
       <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-2 text-sm text-white font-semibold">
-        IMDb: {rating}
+        IMDb: {movie.rating}
       </div>
     </div>
   );

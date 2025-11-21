@@ -43,9 +43,7 @@ const App = () => {
           movies.map((movie) => (
             <MovieCard
               key={movie.name}
-              image={movie.image}
-              rating={movie.rating}
-              trailerYoutubeId={movie.trailerYoutubeId}
+              movie={movie}
             />
           ))
         ) : (
