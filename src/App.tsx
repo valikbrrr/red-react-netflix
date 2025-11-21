@@ -1,6 +1,6 @@
 import { useState } from "react";
 import MovieCard from "./MovieCard";
-import { MOVIES } from "./Movies.data";
+import { MOVIES } from "./movies.data";
 import { useDebounce } from "./hooks/useDebaunce";
 import { useTheme } from "./hooks/useTheme";
 

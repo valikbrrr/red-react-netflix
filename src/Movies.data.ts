@@ -1,18 +1,16 @@
-interface Movie {
-  name: string,
-  image: string,
-  rating: number
-}
+import type { IMovie } from "./movies.interface";
 
-export const MOVIES: Movie[] = [
+export const MOVIES: IMovie[] = [
   {
-    name: 'narcos',
-    image: '/narcos.jpg',
-    rating: 8.6
+    name: "narcos",
+    image: "/narcos.jpg",
+    rating: 8.6,
+    trailerYoutubeId: "GLLtbTuUYqg",
   },
   {
-    name: 'final space',
-    image: '/final.jpg',
-    rating: 7.4
+    name: "final space",
+    image: "/final.jpg",
+    rating: 7.4,
+    trailerYoutubeId: "4EHbt_kSkG8",
   },
-]
+];
