@@ -1,4 +1,4 @@
-import { lazy, useMemo } from "react";
+import { lazy, Suspense, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { MOVIES } from "../home/movies.data";
 
@@ -35,7 +35,9 @@ export function MovieDetails() {
             length, year of release or just a synopsis, like in the Netflix
             interface.
           </p>
-          <LazyMovieComments />
+          <Suspense fallback={<div>Loading...</div>}>
+            <LazyMovieComments />
+          </Suspense>
         </div>
       </div>
     </div>
