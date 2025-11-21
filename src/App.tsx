@@ -17,7 +17,7 @@ const App = () => {
   }, [debouncedSearch]);
 
   return (
-    <div className="min-h-screen w-full bg-white text-black dark:bg-black dark:text-white px-6 py-5">
+    <div>
       <header className="mb-10 flex items-center justify-between">
         <img src="/netflix.png" alt="Netflix" className="h-8 w-auto" />
         <div className="">
