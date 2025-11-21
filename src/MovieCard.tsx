@@ -1,6 +1,7 @@
 import { memo, useCallback, useState } from "react";
 import { Modal } from "./components/ui/Modal";
 import FavoriteButton from "./FavoriteButton";
+import { Link } from "react-router-dom";
 
 interface MovieCardType {
   image: string;
@@ -49,6 +50,9 @@ const MovieCard: React.FC<MovieCardType> = ({
         <button className="btn" onClick={openTrailer}>
           🎥
         </button>
+        <Link to={`/movie/${trailerYoutubeId}`} className="btn">
+          🔗
+        </Link>
       </div>
       <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-2 text-sm text-white font-semibold">
         IMDb: {rating}
