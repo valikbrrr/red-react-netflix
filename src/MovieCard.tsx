@@ -1,6 +1,6 @@
-import { useCallback, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import { Modal } from "./components/ui/Modal";
-import { FavoriteButton } from "./FavoriteButton";
+import FavoriteButton from "./FavoriteButton";
 
 interface MovieCardType {
   image: string;
@@ -57,4 +57,4 @@ const MovieCard: React.FC<MovieCardType> = ({
   );
 };
 
-export default MovieCard;
+export default memo(MovieCard);

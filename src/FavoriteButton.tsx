@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 
-export const FavoriteButton = () => {
+const FavoriteButton = () => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   return (
@@ -9,3 +9,5 @@ export const FavoriteButton = () => {
     </button>
   );
 };
+
+export default memo(FavoriteButton)
