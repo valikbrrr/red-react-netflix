@@ -1,5 +1,5 @@
 import { memo, useCallback, useState } from "react";
-import { Modal } from "./components/ui/Modal";
+import { Modal } from "../../components/ui/Modal";
 import FavoriteButton from "./FavoriteButton";
 import { Link } from "react-router-dom";
 

@@ -1,6 +1,8 @@
-import { useMemo } from "react";
+import { lazy, useMemo } from "react";
 import { useParams } from "react-router-dom";
-import { MOVIES } from "./movies.data";
+import { MOVIES } from "../home/movies.data";
+
+const LazyMovieComments = lazy(() => import("./MovieComments"));
 
 export function MovieDetails() {
   const { id } = useParams();
@@ -33,6 +35,7 @@ export function MovieDetails() {
             length, year of release or just a synopsis, like in the Netflix
             interface.
           </p>
+          <LazyMovieComments />
         </div>
       </div>
     </div>
